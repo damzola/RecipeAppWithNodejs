@@ -1,0 +1,213 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+        <img src="/img/food channel.png" title="italian Delicacy" width="500" height="410" class="d-block mx-lg-auto-fluid" id="top-image" loading="lasy"  alt="Recipe show-up">
+
+    </div>
+    <div class="col-12 col-lg-6">
+        <h5 class="display-5 fw-bold mb-3">
+            Select your delicious Recipe
+        </h5>
+        <p class="lead">
+            Explore all our list of delicious inter-continenter foods, from Africa to Asia, America and Europian recipes. 
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/exploreLatest" class="btn btn-primary btn-dark btn-lg px-4 md-md-2">Explore Latest Meals</a>
+            <a href="/exploreRandom" class="btn btn-outline-seconday btn-success btn-lg px-4 md-md-2">See Random Meals</a>
+        </div>
+    </div>
+</div>
+
+<!-- Categories start --> 
+
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4 align-items-center justify-content-center ">
+
+   <% if(categories != ''){ %>
+   <% categories.forEach(function(category, index){ %>
+    <a href="/categories/<%- category.name %>" class="col text-center category_link">
+        <div class="category_img shadow">
+            <img src="img/<%- category.image %>" alt="<%- category.name %>"  loading="lazy">
+        </div>
+        <div class="pt-1">
+            <%- category.name %>
+        </div>
+    </a>
+    <% }) %>
+    <% } %>
+
+
+    <a href="/categories" class="col text-center category_link">
+        <div class="category_img shadow">
+            <img src="img/noodles.jpg" alt="coffe"  loading="lazy">
+        </div>
+        <div class="pt-1">
+            View More
+        </div>
+    </a>
+    
+
+
+</div>
+
+<!-- Categories End -->
+
+
+<!-- Latest Start -->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h3>Latest Recipe Post</h3>
+        <a href="/explore-latest" class="ms-auto">See More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+            <% if(food != '') { %>
+                <% food.latest.forEach(function(recipe, index){ %>
+
+        <a href="/recipe/<%= recipe._id %>" class="col text-center category_link">
+        <div 
+            class="category_img category_img--large ">
+            <img src="/uploads/<%= recipe.image %>" 
+                 alt="<%= recipe.name %>"  loading="lazy">
+            </div>
+            <div class="pt-1">
+                <%= recipe.name %>
+            </div>
+        </a>
+        <% }) %>
+        <% } %>
+       
+                      
+
+
+    </div>
+</section>
+
+<!-- Latest End -->
+
+
+
+<!-- America recipe Start -->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h3>America Recipe Post</h3>
+        <a href="/categories/America" class="ms-auto">See More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+            <% if(typeof food.america !== 'undefine' && food.america.length > 0) { %>
+                <% food.america.forEach(function(recipe, index){ %>
+
+        <a href="/recipe/<%= recipe._id %>" class="col text-center category_link">
+        <div 
+            class="category_img category_img--large ">
+            <img src="/uploads/<%= recipe.image %>" 
+                 alt="<%= recipe.name %>"  loading="lazy">
+            </div>
+            <div class="pt-1">
+                <%= recipe.name %>
+            </div>
+        </a>
+        <% }) %>
+        <% }else { %>
+       
+        <p>No item found.</p>
+        <% } %>
+    </div>
+</section>
+
+<!-- America recipe End -->
+
+
+<!-- Ghana recipe Start -->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h3>Ghana Recipe Post</h3>
+        <a href="/categories/Ghana" class="ms-auto">See More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+            <% if(typeof food.ghana !== 'undefine' && food.ghana.length > 0) { %>
+                <% food.ghana.forEach(function(recipe, index){ %>
+
+        <a href="/recipe/<%= recipe._id %>" class="col text-center category_link">
+        <div 
+            class="category_img category_img--large ">
+            <img src="/uploads/<%= recipe.image %>" 
+                 alt="<%= recipe.name %>"  loading="lazy">
+            </div>
+            <div class="pt-1">
+                <%= recipe.name %>
+            </div>
+        </a>
+        <% }) %>
+        <% }else { %>
+       
+        <p>No item found.</p>
+        <% } %>
+       
+                      
+
+
+    </div>
+</section>
+
+<!-- Ghana recipe End -->
+
+<!-- Nigeria recipe Start -->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h3>Nigeria Recipe Post</h3>
+        <a href="/categories/Nigeria" class="ms-auto">See More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+            <% if(typeof food.nigeria !== 'undefine' && food.nigeria.length > 0) { %>
+                <% food.nigeria.forEach(function(recipe, index){ %>
+
+        <a href="/recipe/<%= recipe._id %>" class="col text-center category_link">
+        <div 
+            class="category_img category_img--large ">
+            <img src="/uploads/<%= recipe.image %>" 
+                 alt="<%= recipe.name %>"  loading="lazy">
+            </div>
+            <div class="pt-1">
+                <%= recipe.name %>
+            </div>
+        </a>
+        <% }) %>
+        <% }else { %>
+       
+        <p>No item found.</p>
+        <% } %>
+                      
+
+
+    </div>
+</section>
+
+
+<!-- Nigeria recipe End -->
+
+<!-- Submit  Start -->
+
+<section class="px-4 py-5 my-5 text-center">
+<img class="f-block mx--auto mb-4 img-fluid" src="/img/submit.jpg" alt="new recipe" width="566" height="208" loading="lazy">
+<h4 class="display-5 fw-blod">Post your recipe for free</h4>
+<div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">
+        Show the world hou you can make their day merry with your recipe for free
+    </p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="/submitRecipe" class="btn btn-primary btn-dark-lg">Submit Recipe</a>
+    </div>
+</div>
+</section>
+
+<!-- Submit End -->

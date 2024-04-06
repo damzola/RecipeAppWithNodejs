@@ -1,0 +1,73 @@
+    
+    <div class="px-4 py-3 my-45 text-center">
+    <h1 class="display-5 fw-bold">Submit Your Delicacy</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead">
+            Use our platform to share the work of your hand with the world for free and be a stand out among many across the globe.
+        </p>
+    </div>
+</div>
+
+    <div class="row justify-content-center">
+                <% if(successInfo != ''){%>
+            <div class="col-8 alert alert-success" role="alert">
+        <%= successInfo %>
+        </div>
+    <% } %>
+
+    <% if(errorInfo != ''){%>
+        <div class="col-8 alert alert-danger" role="alert">
+    <%= errorInfo[0].message %>
+    </div>
+    <% } %>    
+
+        <div class="col-8">
+            <form action="/submitRecipe" enctype="multipart/form-data" method="POST">
+                <div class="row- g-3">
+                    <div class="col-12">
+                        <label for="name" class="form-label"> Recipe Name</label>
+                        <input type="name" name="name" id="name" class="form-control"/>
+
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" id="email" class="form-control"/>
+
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="description" id="description" class="form-control" cols="30" row="4"></textarea>
+
+                        <label for="ingredient" class="form-label">Ingredient</label>
+                        <small>Example: Salt</small>
+                      <div class="ingredientList ">
+                        <div class="ingredientDiv mb-2">
+                            <input type="text" name="ingredient" class="form-control" />
+                        </div>
+                    </div>
+                        <div class="col-12">
+                            <button type="button" class="btn btn-outline-primary" id="addIngredientBtn" title="Add more Ingredients">Add More</button>
+                        </div>
+
+
+                    <div class="col-12 mt-3">
+                        <label for="category" class="form-label">Select Category</label>
+                        <select class="form-select form-control mb-4" name="category" aria-label="Category">
+                            <option selected>Select Category</option>
+                            <option value="America">America</option>
+                            <option value="Nigeria">Nigeria</option>
+                            <option value="Italian">Italian</option>
+                            <option value="Chainese">Chainese</option>
+                            <option value="Ghana">Ghana</option>
+                        </select>
+
+                     </div> 
+                     <div class="col-12 mb-3">
+                        <label for="image">Show Delicacy</label>
+                        <input type="file" name="image" class="form-control mt-2" accept="image/*"/>
+                     </div>
+                     <div class="col-12" >
+                        <button type="submit" class="btn btn-primary">Upload Recipe</button>
+                     </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>

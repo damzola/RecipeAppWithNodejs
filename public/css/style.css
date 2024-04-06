@@ -1,0 +1,50 @@
+:root{
+    --bs-font-sans-serif: 'Rubik', var(var(--bs-font-sans-serif))
+}
+
+.container-xxl{max-width: 1530px ;}
+
+body{
+    background-image: url("/img/new food.jpg");
+    background-color: rgb(243, 243, 243);
+}
+a{
+    color: var(--bs-dark);
+}
+#top-image{
+    border: 2px solid rgb(131, 104, 104);
+    border-radius: 7px;
+}
+.category_link{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    transition: 250ms all;
+}
+.category_link:hover{
+    transform: scale(1.1);
+    padding: 15px;
+}
+
+.category_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,.16);
+    overflow: hidden;
+    border-radius: 8px;
+}
+.category_img--large,img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.category_img img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
